@@ -6,6 +6,21 @@ import { ComputersCanvas } from "./canvas";
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
+      <style>
+        {`
+          @media (max-width: 640px) {
+            .scroll-button {
+              bottom: 40px !important;
+            }
+          }
+          @media (min-width: 641px) {
+            .scroll-button {
+              bottom: -20px !important;
+            }
+          }
+        `}
+      </style>
+
       <div
         className={`absolute inset-0 top-[80px] max-w-6xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -28,7 +43,7 @@ const Hero = () => {
 
       <ComputersCanvas />
 
-      <div style={{ position: 'absolute', bottom: '30px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 20 }}>
+      <div className="scroll-button" style={{ position: 'absolute', bottom: '0px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 20 }}>
         <a href='#about' className="block p-4">
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
